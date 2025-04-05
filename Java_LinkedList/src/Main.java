@@ -1,12 +1,13 @@
-public class App {
+public class Main {
     public static void main(String[] args) throws Exception {
-        LinkedList list = new LinkedList();
+        Linked_List list = new Linked_List();
 
         System.out.println(" "); // Para deixar bonito no terminal
 
         list.add(1);
         list.add(2);
         list.add(3);
+        list.add(4);
 
         System.out.println("  LISTA CRIADA  ");
         System.out.println(list);

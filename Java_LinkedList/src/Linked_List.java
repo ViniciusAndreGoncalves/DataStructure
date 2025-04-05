@@ -1,12 +1,12 @@
 
 
-public class LinkedList {
+public class Linked_List {
     
     private Node start;
     private Node lastNode;
     private int lenght;
 
-    public LinkedList() {}
+    public Linked_List() {}
 
     void add(int element){              //Aqui sempre insere no final da lista ou fila;
         Node cell = new Node(element);  // Instanciei o objeto Node aqui, para não precisar instanciar toda vez que quiser inserir um novo elemento no Main
