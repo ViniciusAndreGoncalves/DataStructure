@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        Linked_List list = new Linked_List();
+        LinkedList list = new LinkedList();
 
         System.out.println(" "); // Para deixar bonito no terminal
 
@@ -22,6 +22,12 @@ public class Main {
 
         list.removeSpecificElement(3);    // Remover elemento em posição específica
         System.out.println("  ELEMENTO REMOVIDO  ");
+        System.out.println(list);
+
+        System.out.println(" "); // Para deixar bonito no terminal
+
+        list.clear();                                             // Limpar a lista
+        System.out.println("  LISTA ESVAZIADA  ");
         System.out.println(list);
 
         System.out.println(" "); // Para deixar bonito no terminal

@@ -1,12 +1,12 @@
 
 
-public class Linked_List {
+public class LinkedList {
     
     private Node start;
     private Node lastNode;
     private int lenght;
 
-    public Linked_List() {}
+    public LinkedList() {}
 
     void add(int element){              //Aqui sempre insere no final da lista ou fila;
         Node cell = new Node(element);  // Instanciei o objeto Node aqui, para não precisar instanciar toda vez que quiser inserir um novo elemento no Main
@@ -28,16 +28,19 @@ public class Linked_List {
     void clear(){ // Função que limpa a lista
 
         //2. Porém por questões de Garbage Collector, gerenciamento de memória essa parte é importante
-        // for (Node current = this.start; current != null;) { // Para o atual = inicial e diferente de nulo
-        //     Node next = current.getNext(); // faça o próximo elemento se tornar o atual
-        //     current.setElement(null); // Aqui não vai funcionar pois a lista é de inteiros; Mas faz o atual ser nulo
-        //     current.setNext(null); // e aqui o próximo fica nulo também
-        //     current = next; // Aqui o atual aponta para o próximo
-        // }
+        Node currentNode = this.start;
 
-        //1. Essa parte já limpa a lista toda sozinha
-        this.start = null;
-        this.lastNode = null;
+        while (currentNode != null) {
+            Node next = currentNode.getNext();      // Aqui é salva a referência do ponteiro do próximo nó (para não perder a sequência)
+            currentNode.setNext(null);              // Aqui ele quebra a referência do próximo nó; O current aponta para null agora.
+                                                    // current[ei nó atual]setNext(null)[esqueça quem vem depois de você]
+            currentNode = next;                     // Aqui o nó atual se torna o nó que foi salvo anteriormente, no caso, o próximo elemento
+        }
+        this.start = null;                          // Aqui apaga o primeiro nó
+
+        //1. Essa parte já limpa a lista toda sozinha, proém se fosse outra liguagem como C ou C++, não há garbage collector
+        // this.start = null;
+        // this.lastNode = null;
         this.lenght = 0;
     }
 
